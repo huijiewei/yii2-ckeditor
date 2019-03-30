@@ -111,7 +111,7 @@ class CKEditorWidget extends InputWidget
                 evt.stop();
             });
             
-            editor.on( 'fileUploadResponse', function( evt ) {
+            editor.on('fileUploadResponse', function( evt ) {
 				evt.stop();
 				
 				var data = evt.data;
