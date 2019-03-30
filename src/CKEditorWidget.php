@@ -12,6 +12,7 @@ use huijiewei\upload\BaseUpload;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\web\JsExpression;
 use yii\web\View;
 use yii\widgets\InputWidget;
 
@@ -64,7 +65,7 @@ class CKEditorWidget extends InputWidget
         $uploadFormData = Json::encode($fileUploadBuilds['params']);
         $uploadParamName = $fileUploadBuilds['paramName'];
         $uploadResponseType = $fileUploadBuilds['dataType'];
-        $uploadResponseParse = $fileUploadBuilds['responseParse'];
+        $uploadResponseParse = new JsExpression($fileUploadBuilds['responseParse']);
 
         $js = <<<EOD
         $(document).ready(function () {
