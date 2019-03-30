@@ -65,7 +65,7 @@ class CKEditorWidget extends InputWidget
         $uploadFormData = Json::encode($fileUploadBuilds['params']);
         $uploadParamName = $fileUploadBuilds['paramName'];
         $uploadResponseType = $fileUploadBuilds['dataType'];
-        $uploadResponseParse = new JsExpression($fileUploadBuilds['responseParse']);
+        $uploadResponseParse = new JsExpression('function (result) { ' . $fileUploadBuilds['responseParse'] . '}');
 
         $js = <<<EOD
         $(document).ready(function () {
